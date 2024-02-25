@@ -42,9 +42,7 @@ const with_accumulator = (next, extend=()=>[]) => {
 
 // @ts-ignore
 const with_accumulator_transformed = (next, f=x=>x, extend=()=>[]) => {
-    const pre = extend();
-    // @ts-ignore
-    const proto = pre.push ? pre : [];
+    const proto = extend();
     // @ts-ignore
     for (let x; x = next(); proto.push(f(x)));
     return proto;
@@ -52,9 +50,7 @@ const with_accumulator_transformed = (next, f=x=>x, extend=()=>[]) => {
 
 // @ts-ignore
 const with_accumulator_conditional = (next, condition=x=>!!x, extend=()=>[]) => {
-    const pre = extend();
-    // @ts-ignore
-    const proto = pre.push ? pre : [];
+    const proto = extend();
     // @ts-ignore
     for (let x; x = next(); condition(x) ? proto.push(x) : null);
     return proto;
@@ -62,9 +58,7 @@ const with_accumulator_conditional = (next, condition=x=>!!x, extend=()=>[]) => 
 
 // @ts-ignore
 const with_accumulator_conditional_transformed = (next, f=x=>x, condition=x=>!!x, extend=()=>[]) => {
-    const pre = extend();
-    // @ts-ignore
-    const proto = pre.push ? pre : [];
+    const proto = extend();
     // @ts-ignore
     for (let x; x = next(); condition(x) ? proto.push(f(x)) : null);
     return proto;
