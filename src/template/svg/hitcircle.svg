@@ -1,0 +1,3 @@
+<svg id="hitcircle" width="$size" height="$size">
+  <circle id="hitcircle-inner" cx="$center" cy="$center" r="$radius" fill="$fill" />
+</svg>
