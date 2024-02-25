@@ -1,4 +1,5 @@
-import { resolve_path, template_path } from "./util/path";
+import { resolve_path, template_path } from "./util/path.js";
+import {} from "./util/functional.js";
 
 const default_fetch = (path: string, override={}) => fetch(path, { mode: "same-origin", method: "GET", ...override });
 const fetch_text = (path: string, override={}) => default_fetch(path, override).then(response => response.text());

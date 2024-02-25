@@ -1,4 +1,4 @@
-import { resolve_path, template_path } from "./util/path";
+import { resolve_path, template_path } from "./util/path.js";
 const default_fetch = (path, override = {}) => fetch(path, { mode: "same-origin", method: "GET", ...override });
 const fetch_text = (path, override = {}) => default_fetch(path, override).then(response => response.text());
 const fetch_json = (path, override = {}) => default_fetch(path, override).then(response => response.json());
@@ -42,4 +42,3 @@ const templates = Object.keys(template_loaders).map(async (key) => {
     return el;
 });
 console.log("all templates:\n", await Promise.all(templates));
-//# sourceMappingURL=index.js.map
